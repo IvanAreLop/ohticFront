@@ -1,0 +1,126 @@
+.headerContent {
+    height: 100vh;
+    width: 100vw;
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+    height: 100vh;
+    min-height: 1000px;
+    width: 100vw;
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 8em;
+}
+
+.vote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+}
+
+.downArrow {
+    background: url('../../assets/images/downArrow.png') no-repeat left center / cover;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.info {
+    padding-top: 120px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width:70vw;
+    text-align: center;
+}
+
+.js-scroll {
+    padding-top: 40px;
+    height: 100vh;
+    width: 30vw;
+    align-self: flex-start;
+    visibility: hidden;
+    min-height: 1000px;
+}
+
+.textInfo {
+    font-family:sans-serif;
+    font-size: 1.3em;
+}
+
+.titleInfo {
+    margin-top: 10px;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.scrolled.slide-left {
+    animation: slide-in-left 2s ease-in-out both;
+    visibility: visible;
+}
+   
+.scrolled.slide-right {
+    animation: slide-in-right 2s ease-in-out both;
+    visibility: visible;
+}
+   
+@keyframes slide-in-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+   
+@keyframes slide-in-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 4em;
+        margin-top: 10px;
+    }
+
+    .info {
+        justify-content: space-around;
+    }
+
+    .textInfo {
+        font-size: 1em;
+    }
+    
+    .titleInfo {
+        margin-top: 5px;
+        font-size: 1.3em;
+    }
+
+    .background-image {
+        width: 100vw
+    }
+    
+}

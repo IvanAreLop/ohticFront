@@ -1,0 +1,13 @@
+<div class="votesRow" (click)="votePlanet()" [ngClass]="{'votesHover':true, 'mars': planetName === 'Marte', 'jupiter': planetName === 'Júpiter', 'uranus': planetName === 'Urano'}" >
+    <div class="planetName">
+        {{planetName}}
+    </div>
+    <div class="votation">
+        <div class="votesCount">votos: {{votes[planet]}}</div> 
+        <div class="voteButton">
+            <span *ngIf="userVote === planet" >Votado</span>
+            <span *ngIf="userVote === null" >Votar</span>
+            <span *ngIf="userVote !== planet && userVote !== null" >Cambiar</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<app-header [isLoggedUser]="userData ? true : false"></app-header>
+<div  class="content">
+    <app-votes-row class="votesRow" (voteEvent)="vote($event)" [planet]="Planet.MARS" [userVote]="userVote" [votes]="votes" [planetName]="'Marte'"></app-votes-row>
+    <app-votes-row class="votesRow" (voteEvent)="vote($event)" [planet]="Planet.JUPITER" [userVote]="userVote" [votes]="votes" [planetName]="'Júpiter'"></app-votes-row>
+    <app-votes-row class="votesRow" (voteEvent)="vote($event)" [planet]="Planet.URANUS" [userVote]="userVote" [votes]="votes" [planetName]="'Urano'"></app-votes-row>
+</div>

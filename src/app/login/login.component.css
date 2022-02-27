@@ -1,0 +1,82 @@
+.content {
+    height: 100vh;
+    width: 100vw;
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loginDiv {
+    height: 50vh;
+    min-height: 300px;
+    width: 40vw;
+    background: black;
+    color: #a845c5;
+    border-radius: 10px;
+    opacity: .9;
+    font-family: sans-serif;
+    padding: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.form > input {
+    margin-bottom: 5px;
+    height:40px;
+    font-size: 1.5em;
+    background-color: black;
+    color: #a845c5;
+    border-radius: 10px;
+    border-color: #a845c5;
+}
+
+.invalid {
+    border-color: red !important;
+    color: red !important;
+}
+
+.form > button {
+    height: 40px;
+    font-size: 1.5em;
+    transition: all 0.8s linear 0.1s;
+    background-color: black;
+    border-color: #a845c5;
+    color:#a845c5;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: all 0.2s;
+    border-radius: 10px;
+    cursor: pointer;
+    min-width:290px
+}
+
+.form > button:hover {
+    background-color: #a845c5;
+    color: black;
+}
+
+.changeForm {
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+
+@media (max-width: 1000px) { 
+    .loginDiv {
+        width: 100vw;
+    }
+
+    .background-image {
+        width: 100vw
+    }
+}

@@ -1,0 +1,24 @@
+<app-header [isLoggedUser]="false"></app-header>
+<div class="background-image"></div>
+<div class="content">
+    <div class="loginDiv">
+        <form *ngIf="!newUserViewActive" class="form" [formGroup]="loginForm">
+            <h1>Iniciar sesión</h1>
+            <input type="text" formControlName="name" placeholder="Nombre" [ngClass]="{'invalid':loginFormError}" (ngModelChange)="cleanErrors()"/>
+            <input type="password" formControlName="password" placeholder="Contraseña" [ngClass]="{'invalid':loginFormError}" (ngModelChange)="cleanErrors()"/>
+            <button type="submit" (click)="login()">Acceder</button>
+        </form>
+        <form *ngIf="newUserViewActive" class="form" [formGroup]="newUserForm">
+            <h1>Crear cuenta</h1>
+            <input type="text" formControlName="name" placeholder="Nombre" [ngClass]="{'invalid':newUserFormError}" (ngModelChange)="cleanErrors()"/>
+            <input type="password" formControlName="password" placeholder="Contraseña" [ngClass]="{'invalid':newUserFormError}" (ngModelChange)="cleanErrors()"/>
+            <button type="submit" (click)="createUser()">Crear</button>
+        </form>
+        <div class="changeForm" *ngIf="!newUserViewActive" (click)="newUserView(true)">
+            Crear cuenta
+        </div>
+        <div class="changeForm" *ngIf="newUserViewActive" (click)="newUserView(false)">
+            Iniciar sesión
+        </div>
+    </div>
+</div>

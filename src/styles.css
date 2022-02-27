@@ -1,0 +1,20 @@
+.background-image {
+    width: 105vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    position:absolute;
+    background: url('assets/images/background.webp') no-repeat left center / cover;
+}
+
+.mars {
+    background: url('assets/images/mars.png') no-repeat right center / cover;
+}
+
+.jupiter {
+    background: url('assets/images/jupiter.png') no-repeat left center / cover;
+}
+
+.uranus {
+    background: url('assets/images/uranus.png') no-repeat right center / cover;
+}

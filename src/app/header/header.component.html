@@ -1,0 +1,6 @@
+<nav class="nav">
+    <a class="button" routerLink="/home">PlanetInfo</a>
+    <a class="button" routerLink="/vote">Votación</a>
+    <a *ngIf="!isLoggedUser" class="button" routerLink="/login">Iniciar sesión</a>
+    <a *ngIf="isLoggedUser" class="button" routerLink="/home" (click)="cleanSession()">Cerrar sesión</a>
+  </nav>
