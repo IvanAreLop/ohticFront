@@ -1,6 +1,9 @@
 <app-header [isLoggedUser]="userData ? true : false"></app-header>
-<div  class="content">
+<div *ngIf="userData" class="content">
     <app-votes-row class="votesRow" (voteEvent)="vote($event)" [planet]="Planet.MARS" [userVote]="userVote" [votes]="votes" [planetName]="'Marte'"></app-votes-row>
     <app-votes-row class="votesRow" (voteEvent)="vote($event)" [planet]="Planet.JUPITER" [userVote]="userVote" [votes]="votes" [planetName]="'Júpiter'"></app-votes-row>
     <app-votes-row class="votesRow" (voteEvent)="vote($event)" [planet]="Planet.URANUS" [userVote]="userVote" [votes]="votes" [planetName]="'Urano'"></app-votes-row>
+</div>
+<div *ngIf="!userData" class="loginRequired title background-image" routerLink="/login">
+    Se requiere iniciar sesión
 </div>

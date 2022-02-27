@@ -30,22 +30,21 @@ export class VoteComponent implements OnInit {
     if(this.userData){
       this.showVotes = true;
       this.userVote = this.userData.getVote()!;
+      // Se cargan los votos de cada planeta
+      this.userService.getAllVotes(this.userData.getToken()!).subscribe({
+        next: (data) => {
+          this.votes[Planet.MARS]=0;
+          this.votes[Planet.JUPITER]=0;
+          this.votes[Planet.URANUS]=0;
+          data.forEach((planetVote: number)=>{
+            this.sumVote(planetVote);
+          })
+        },
+        error: (error) => {
+          console.log(error)
+          return false;
+        }});
     }
-
-    // Se cargan los votos de cada planeta
-    this.userService.getAllVotes(this.userData.getToken()!).subscribe({
-      next: (data) => {
-        this.votes[Planet.MARS]=0;
-        this.votes[Planet.JUPITER]=0;
-        this.votes[Planet.URANUS]=0;
-        data.forEach((planetVote: number)=>{
-          this.sumVote(planetVote);
-        })
-      },
-      error: (error) => {
-        console.log(error)
-        return false;
-      }});
   }
 
   /**
